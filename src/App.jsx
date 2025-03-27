@@ -5,6 +5,8 @@ import Dashboard from "./pages/Editor";
 import AllDocs from "./pages/AllDocs";
 import "react-quill/dist/quill.snow.css";
 
+
+
 function App() {
   return (
     <BrowserRouter>

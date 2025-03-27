@@ -11,7 +11,6 @@ const AllDocuments = () => {
       const { data } = await axios.get("http://localhost:5000/api/letters", {
         withCredentials: true,
       });
-      console.log("docs ", data);
       setDocuments(data.documents);
     } catch (error) {
       console.log("Error while fetching users", error);
