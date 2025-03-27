@@ -1,7 +1,10 @@
+import API_URL from "../const/const.js";
 function Login() {
   const handleLogin = () => {
-    window.open("http://localhost:5000/auth/google", "_self");
+    window.open(`${API_URL}/auth/google`, "_self");
   };
+
+  console.log("import.meta.env.MODE: ", import.meta.env.MODE);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-white flex items-center justify-center px-4">

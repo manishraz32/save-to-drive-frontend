@@ -3,12 +3,13 @@ import { FileText } from "lucide-react"; // Optional icon library
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import axios from "axios";
+import API_URL from "../const/const.js";
 
 const AllDocuments = () => {
   const [documents, setDocuments] = useState(null);
   const getUsersAllDocument = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/letters", {
+      const { data } = await axios.get(`${API_URL}/api/letters`, {
         withCredentials: true,
       });
       setDocuments(data.documents);

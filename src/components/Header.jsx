@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
+import API_URL from "../const/const.js";
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -11,7 +12,7 @@ const Header = () => {
 
   const logout = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/auth/logout", {
+      const res = await axios.get(`${API_URL}/auth/logout`, {
         withCredentials: true,
       });
       if (res.statusText == "OK") {

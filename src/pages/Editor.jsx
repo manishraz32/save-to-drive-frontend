@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CommonDialog from "../components/CommonDialog";
 import toast from "react-hot-toast";
+import API_URL from "../const/const.js";
 
 function Editor() {
   const [user, setUser] = useState(null);
@@ -22,7 +23,7 @@ function Editor() {
     setIsDocSaving(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/save-to-drive",
+        `${API_URL}/api/save-to-drive`,
         {
           fileName: data?.docName,
           content: letter,
@@ -43,7 +44,7 @@ function Editor() {
 
   const getUserDetail = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/profile", {
+      const { data } = await axios.get(`${API_URL}/profile`, {
         withCredentials: true,
       });
       setUser(data);
